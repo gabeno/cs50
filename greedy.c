@@ -4,11 +4,11 @@
 
 int main(void)
 {
-    // get user input
     float input;
     int change;
     int coins = 0;
 
+    // get user input
     do
     {
         printf("O hai! How much change is owed? ");
@@ -24,7 +24,7 @@ int main(void)
     {
         if (change / 100 > 0)
         {
-            // coins += (change / 100);
+            coins += (change / 100) * 4;
             change = (change % 100);
         }
 
@@ -54,4 +54,5 @@ int main(void)
     }
 
     printf("%i\n", coins);
+    return 0;
 }
