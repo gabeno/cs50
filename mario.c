@@ -3,41 +3,37 @@
 
 int main(void)
 {
-    int pad;
-    int h;
+    // get valid input
+    int height;
+    
+    do
+    {
+        printf("Height: ");
+        height = GetInt();
+    }
+    while (height < 1 || height > 23);
+
+
+    // compute and print blocks
     int i;
     int j;
     int k;
 
-    // get valid input
-    while (true)
+    for (i = 0; i < height; i++)
     {
-        printf("Height: ");
-        h = GetInt();
-        
-        if (h > 0 && h <= 23)
-        {
-            break;
-        }
-    }
-
-    // compute and print blocks
-    for (i = 1; i <= h; i++) // layer
-    {
-        pad = h - i;
-
-        // printf("Height: %i, Pad: %i\n", i, pad);
-        
-        for (k = 0; k < pad; k++) // space
+        // print spaces
+        for (j = 1; j < height - i; j++)
         {
             printf(" ");
         }
 
-        for (j = 0; j < i; j++) // block
+        // print hashes
+        for (k = 0; k < i + 2; k++)
         {
             printf("#");
         }
 
-        printf("#\n");
+        // print newline
+        printf("\n");
     }
 }
