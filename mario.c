@@ -10,8 +10,13 @@ int main(void)
     {
         printf("Height: ");
         height = GetInt();
+
+        if (height == 0)
+        {
+            break;
+        }
     }
-    while (height < 1 || height > 23);
+    while (height < 0 || height > 23);
 
 
     // compute and print blocks
@@ -36,4 +41,6 @@ int main(void)
         // print newline
         printf("\n");
     }
+
+    return 0;
 }
